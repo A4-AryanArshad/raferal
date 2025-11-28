@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Listings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Rechercher une location</h1>
+            <div class="header-icon">
+                <i class="fas fa-filter"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Search Bar -->
+            <div style="position: relative; margin-bottom: 20px;">
+                <i class="fas fa-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                <input type="text" class="search-bar" placeholder="Où voulez-vous aller?" style="padding-left: 45px;">
+            </div>
+
+            <!-- Filter Options -->
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <button class="cta-button secondary filter-button" onclick="openFilter('dates', event)" style="flex: 1; padding: 12px; font-size: 14px;"><i class="fas fa-calendar-alt" style="margin-right: 5px;"></i>Dates</button>
+                <button class="cta-button secondary filter-button" onclick="openFilter('price', event)" style="flex: 1; padding: 12px; font-size: 14px;"><i class="fas fa-euro-sign" style="margin-right: 5px;"></i>Prix</button>
+                <button class="cta-button secondary filter-button" onclick="openFilter('filters', event)" style="flex: 1; padding: 12px; font-size: 14px;"><i class="fas fa-sliders-h" style="margin-right: 5px;"></i>Filtres</button>
+            </div>
+
+            <!-- Filter Overlay -->
+            <div class="filter-overlay" onclick="closeFilter()"></div>
+
+            <!-- Dates Filter Panel -->
+            <div class="filter-panel" id="datesFilter">
+                <div class="filter-panel-header">
+                    <h3>Dates</h3>
+                    <div class="filter-panel-close" onclick="closeFilter()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="filter-panel-content">
+                    <div class="filter-option">
+                        <label>Date d'arrivée</label>
+                        <input type="date" id="checkinDate">
+                    </div>
+                    <div class="filter-option">
+                        <label>Date de départ</label>
+                        <input type="date" id="checkoutDate">
+                    </div>
+                    <div class="filter-option">
+                        <label>Durée du séjour</label>
+                        <select id="stayDuration">
+                            <option value="">Sélectionner</option>
+                            <option value="1">1 nuit</option>
+                            <option value="2">2 nuits</option>
+                            <option value="3">3 nuits</option>
+                            <option value="7">1 semaine</option>
+                            <option value="14">2 semaines</option>
+                            <option value="30">1 mois</option>
+                        </select>
+                    </div>
+                    <button class="filter-apply-btn" onclick="applyFilter('dates')">Appliquer</button>
+                </div>
+            </div>
+
+            <!-- Price Filter Panel -->
+            <div class="filter-panel" id="priceFilter">
+                <div class="filter-panel-header">
+                    <h3>Prix</h3>
+                    <div class="filter-panel-close" onclick="closeFilter()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="filter-panel-content">
+                    <div class="filter-option">
+                        <label>Prix par nuit</label>
+                        <div class="filter-range">
+                            <input type="number" id="minPrice" placeholder="Min" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="Max" min="0">
+                            <span>€</span>
+                        </div>
+                    </div>
+                    <div class="filter-option">
+                        <label>Prix total</label>
+                        <div class="filter-range">
+                            <input type="number" id="minTotalPrice" placeholder="Min" min="0">
+                            <span>-</span>
+                            <input type="number" id="maxTotalPrice" placeholder="Max" min="0">
+                            <span>€</span>
+                        </div>
+                    </div>
+                    <div class="filter-option">
+                        <label>Devise</label>
+                        <select id="currency">
+                            <option value="EUR">EUR (€)</option>
+                            <option value="USD">USD ($)</option>
+                            <option value="GBP">GBP (£)</option>
+                        </select>
+                    </div>
+                    <button class="filter-apply-btn" onclick="applyFilter('price')">Appliquer</button>
+                </div>
+            </div>
+
+            <!-- Filters Panel -->
+            <div class="filter-panel" id="filtersFilter">
+                <div class="filter-panel-header">
+                    <h3>Filtres</h3>
+                    <div class="filter-panel-close" onclick="closeFilter()">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="filter-panel-content">
+                    <div class="filter-option">
+                        <label>Type de logement</label>
+                        <select id="propertyType">
+                            <option value="">Tous</option>
+                            <option value="apartment">Appartement</option>
+                            <option value="house">Maison</option>
+                            <option value="villa">Villa</option>
+                            <option value="studio">Studio</option>
+                            <option value="loft">Loft</option>
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <label>Nombre de chambres</label>
+                        <select id="bedrooms">
+                            <option value="">Tous</option>
+                            <option value="1">1 chambre</option>
+                            <option value="2">2 chambres</option>
+                            <option value="3">3 chambres</option>
+                            <option value="4">4+ chambres</option>
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <label>Nombre de lits</label>
+                        <select id="beds">
+                            <option value="">Tous</option>
+                            <option value="1">1 lit</option>
+                            <option value="2">2 lits</option>
+                            <option value="3">3 lits</option>
+                            <option value="4">4+ lits</option>
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <label>Équipements</label>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 10px;">
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="wifi" style="width: auto; margin-right: 8px;"> Wi-Fi
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="kitchen" style="width: auto; margin-right: 8px;"> Cuisine
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="parking" style="width: auto; margin-right: 8px;"> Parking
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="pool" style="width: auto; margin-right: 8px;"> Piscine
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="ac" style="width: auto; margin-right: 8px;"> Climatisation
+                            </label>
+                            <label style="display: flex; align-items: center; font-weight: normal; cursor: pointer;">
+                                <input type="checkbox" value="washer" style="width: auto; margin-right: 8px;"> Lave-linge
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-option">
+                        <label>Note minimale</label>
+                        <select id="minRating">
+                            <option value="">Toutes</option>
+                            <option value="4">4+ étoiles</option>
+                            <option value="4.5">4.5+ étoiles</option>
+                            <option value="4.7">4.7+ étoiles</option>
+                        </select>
+                    </div>
+                    <button class="filter-apply-btn" onclick="applyFilter('filters')">Appliquer</button>
+                </div>
+            </div>
+
+            <!-- Listing Cards -->
+            <a href="listing-detail.html" style="text-decoration: none; color: inherit;">
+                <div class="listing-card" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" alt="Apartment" class="listing-image">
+                    <div class="listing-content">
+                        <div class="listing-title">Appartement moderne au centre-ville</div>
+                        <div class="listing-location"><i class="fas fa-map-marker-alt" style="color: #e31c23; margin-right: 5px;"></i>Paris, France</div>
+                        <div class="listing-price">85 € / nuit</div>
+                        <div class="listing-rating"><i class="fas fa-star" style="color: #ffc107;"></i> 4.8 (124 avis)</div>
+                        <button class="cta-button" style="padding: 12px; font-size: 14px; width: 100%;"><i class="fas fa-share-alt" style="margin-right: 5px;"></i>Recommander</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="listing-detail.html" style="text-decoration: none; color: inherit;">
+                <div class="listing-card" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop" alt="Villa" class="listing-image">
+                    <div class="listing-content">
+                        <div class="listing-title">Villa avec piscine près de la plage</div>
+                        <div class="listing-location"><i class="fas fa-map-marker-alt" style="color: #e31c23; margin-right: 5px;"></i>Nice, France</div>
+                        <div class="listing-price">150 € / nuit</div>
+                        <div class="listing-rating"><i class="fas fa-star" style="color: #ffc107;"></i> 4.9 (89 avis)</div>
+                        <button class="cta-button" style="padding: 12px; font-size: 14px; width: 100%;"><i class="fas fa-share-alt" style="margin-right: 5px;"></i>Recommander</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="listing-detail.html" style="text-decoration: none; color: inherit;">
+                <div class="listing-card" style="cursor: pointer;">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=300&fit=crop" alt="Studio" class="listing-image">
+                    <div class="listing-content">
+                        <div class="listing-title">Studio cosy Montmartre</div>
+                        <div class="listing-location"><i class="fas fa-map-marker-alt" style="color: #e31c23; margin-right: 5px;"></i>Paris, France</div>
+                        <div class="listing-price">65 € / nuit</div>
+                        <div class="listing-rating"><i class="fas fa-star" style="color: #ffc107;"></i> 4.7 (203 avis)</div>
+                        <button class="cta-button" style="padding: 12px; font-size: 14px; width: 100%;"><i class="fas fa-share-alt" style="margin-right: 5px;"></i>Recommander</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function openFilter(type, event) {
+            // Close all filters first
+            closeFilter();
+            
+            // Open the selected filter
+            const filterPanel = document.getElementById(type + 'Filter');
+            const overlay = document.querySelector('.filter-overlay');
+            let button = null;
+            if (event) {
+                button = event.target.closest('.filter-button');
+            }
+            
+            if (filterPanel) {
+                filterPanel.classList.add('active');
+                overlay.classList.add('active');
+                if (button) {
+                    button.classList.add('active');
+                }
+            }
+        }
+
+        function closeFilter() {
+            const filterPanels = document.querySelectorAll('.filter-panel');
+            const overlay = document.querySelector('.filter-overlay');
+            const buttons = document.querySelectorAll('.filter-button');
+            
+            filterPanels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            overlay.classList.remove('active');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+        }
+
+        function applyFilter(type) {
+            // Here you would normally apply the filters and update the listings
+            alert('Filtres appliqués!');
+            closeFilter();
+        }
+
+        // Close filter when clicking overlay
+        document.querySelector('.filter-overlay').addEventListener('click', closeFilter);
+    </script>
+</body>
+</html>
+

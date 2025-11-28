@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Airbnb Referral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Inscription</h1>
+            <div class="header-icon"></div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="login.html" class="menu-item">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span class="menu-item-text">Connexion</span>
+                </a>
+                <a href="signup.html" class="menu-item">
+                    <i class="fas fa-user-plus"></i>
+                    <span class="menu-item-text">Inscription</span>
+                </a>
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content" style="padding: 40px 20px; display: flex; flex-direction: column; justify-content: center; min-height: 100vh;">
+            <!-- Logo/Header -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #e31c23 0%, #c41a20 100%); border-radius: 20px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(227,28,35,0.3);">
+                    <i class="fas fa-user-plus" style="font-size: 40px; color: white;"></i>
+                </div>
+                <h1 style="font-size: 28px; font-weight: 700; color: #2c2c2c; margin-bottom: 10px;">Créer un compte</h1>
+                <p style="color: #666; font-size: 16px;">Rejoignez-nous et commencez à gagner</p>
+            </div>
+
+            <!-- Signup Form -->
+            <form style="width: 100%;">
+                <!-- Full Name -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 14px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
+                        <i class="fas fa-user" style="color: #e31c23; margin-right: 8px;"></i>Nom complet
+                    </label>
+                    <input type="text" placeholder="Jean Dupont" required 
+                           style="width: 100%; padding: 14px 16px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: border-color 0.3s;"
+                           onfocus="this.style.borderColor='#e31c23'" 
+                           onblur="this.style.borderColor='#e0e0e0'">
+                </div>
+
+                <!-- Email Input -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 14px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
+                        <i class="fas fa-envelope" style="color: #e31c23; margin-right: 8px;"></i>Email
+                    </label>
+                    <input type="email" placeholder="votre@email.com" required 
+                           style="width: 100%; padding: 14px 16px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: border-color 0.3s;"
+                           onfocus="this.style.borderColor='#e31c23'" 
+                           onblur="this.style.borderColor='#e0e0e0'">
+                </div>
+
+                <!-- Phone Input -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 14px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
+                        <i class="fas fa-phone" style="color: #e31c23; margin-right: 8px;"></i>Téléphone
+                    </label>
+                    <input type="tel" placeholder="+33 6 12 34 56 78" required 
+                           style="width: 100%; padding: 14px 16px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: border-color 0.3s;"
+                           onfocus="this.style.borderColor='#e31c23'" 
+                           onblur="this.style.borderColor='#e0e0e0'">
+                </div>
+
+                <!-- Password Input -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 14px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
+                        <i class="fas fa-lock" style="color: #e31c23; margin-right: 8px;"></i>Mot de passe
+                    </label>
+                    <div style="position: relative;">
+                        <input type="password" id="password" placeholder="••••••••" required 
+                               style="width: 100%; padding: 14px 16px; padding-right: 45px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor='#e31c23'" 
+                               onblur="this.style.borderColor='#e0e0e0'">
+                        <i class="fas fa-eye" id="togglePassword" 
+                           style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #999; cursor: pointer;"
+                           onclick="togglePasswordVisibility()"></i>
+                    </div>
+                    <p style="font-size: 12px; color: #999; margin-top: 5px;">Minimum 8 caractères</p>
+                </div>
+
+                <!-- Confirm Password -->
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 14px; font-weight: 600; color: #2c2c2c; margin-bottom: 8px;">
+                        <i class="fas fa-lock" style="color: #e31c23; margin-right: 8px;"></i>Confirmer le mot de passe
+                    </label>
+                    <div style="position: relative;">
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required 
+                               style="width: 100%; padding: 14px 16px; padding-right: 45px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; transition: border-color 0.3s;"
+                               onfocus="this.style.borderColor='#e31c23'" 
+                               onblur="this.style.borderColor='#e0e0e0'">
+                        <i class="fas fa-eye" id="toggleConfirmPassword" 
+                           style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #999; cursor: pointer;"
+                           onclick="toggleConfirmPasswordVisibility()"></i>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div style="margin-bottom: 30px;">
+                    <label style="display: flex; align-items: flex-start; cursor: pointer;">
+                        <input type="checkbox" required style="width: 20px; height: 20px; margin-right: 12px; margin-top: 2px; cursor: pointer; accent-color: #e31c23;">
+                        <span style="font-size: 14px; color: #666; line-height: 1.5;">
+                            J'accepte les 
+                            <a href="#" style="color: #e31c23; text-decoration: none;">conditions d'utilisation</a> 
+                            et la 
+                            <a href="#" style="color: #e31c23; text-decoration: none;">politique de confidentialité</a>
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Sign Up Button -->
+                <a href="dashboard.html" style="text-decoration: none; display: block;">
+                    <button type="button" class="cta-button" style="margin-bottom: 20px;">
+                        <i class="fas fa-user-plus" style="margin-right: 8px;"></i>Créer un compte
+                    </button>
+                </a>
+
+                <!-- Login Link -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <p style="color: #666; font-size: 14px;">
+                        Déjà un compte? 
+                        <a href="login.html" style="color: #e31c23; text-decoration: none; font-weight: 600;">Se connecter</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('togglePassword');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        function toggleConfirmPasswordVisibility() {
+            const passwordInput = document.getElementById('confirmPassword');
+            const toggleIcon = document.getElementById('toggleConfirmPassword');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Referral Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Recommandez et gagnez!</h1>
+            <div class="header-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Advantages Section -->
+            <div class="advantages-section">
+                <h3>Vos avantages:</h3>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <div class="advantage-text">
+                        Gagnez de l'argent à chaque recommandation validée
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="advantage-text">
+                        Obtenez une nuit gratuite après 5 réservations parrainées
+                    </div>
+                </div>
+
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="advantage-text">
+                        Devenez Ambassadeur Premium avec des bonus exclusifs
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Summary Box -->
+            <div class="progress-box">
+                <div class="progress-item">
+                    <span class="progress-label">Personnes parrainées</span>
+                    <span class="progress-value">3</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Récompenses gagnées</span>
+                    <span class="progress-value">30 €</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Nuits gratuites</span>
+                    <span class="progress-value">0/1 débloquée</span>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="listing-search.html" style="text-decoration: none;">
+                <button class="cta-button">Recommander une location</button>
+            </a>
+            
+            <p class="helper-text">Partager un lien unique par WhatsApp, email, etc.</p>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

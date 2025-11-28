@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards & Progress</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Récompenses</h1>
+            <div class="header-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Total Balance -->
+            <div style="background: linear-gradient(135deg, #e31c23 0%, #c41a20 100%); border-radius: 16px; padding: 30px; margin-bottom: 30px; color: white; text-align: center;">
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 10px;">Solde total</div>
+                <div style="font-size: 48px; font-weight: 700; margin-bottom: 10px;">30 €</div>
+                <button class="cta-button secondary" style="background: white; color: #e31c23; margin-top: 15px;">Retirer</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Personnes parrainées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">Réservations validées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Nuits gratuites</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">Standard</div>
+                    <div class="stat-label">Statut Ambassadeur</div>
+                </div>
+            </div>
+
+            <!-- Milestone Progress -->
+            <div class="detail-section">
+                <h3>Progression vers la nuit gratuite</h3>
+                <div style="background: #f0f0f0; border-radius: 12px; height: 30px; margin-bottom: 10px; position: relative; overflow: hidden;">
+                    <div style="background: #e31c23; height: 100%; width: 40%; border-radius: 12px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: #666; font-size: 14px;">
+                    <span>2 / 5 réservations</span>
+                    <span>3 restantes</span>
+                </div>
+            </div>
+
+            <!-- Recent Rewards -->
+            <div class="detail-section">
+                <h3>Historique des récompenses</h3>
+                
+                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                        <div style="font-weight: 600;">Réservation validée</div>
+                        <div style="color: #4caf50; font-weight: 600;">+15 €</div>
+                    </div>
+                    <div style="color: #666; font-size: 14px;">Appartement Paris • 12 Jan 2024</div>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                        <div style="font-weight: 600;">Réservation validée</div>
+                        <div style="color: #4caf50; font-weight: 600;">+15 €</div>
+                    </div>
+                    <div style="color: #666; font-size: 14px;">Villa Nice • 5 Jan 2024</div>
+                </div>
+
+                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                        <div style="font-weight: 600;">Réservation en attente</div>
+                        <div style="color: #ff9800; font-weight: 600;">+10 €</div>
+                    </div>
+                    <div style="color: #666; font-size: 14px;">Studio Montmartre • En attente de validation</div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="detail-section">
+                <h3>Méthodes de paiement</h3>
+                <div style="background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-weight: 600;">Compte bancaire</div>
+                            <div style="color: #666; font-size: 14px;">****1234</div>
+                        </div>
+                        <button class="copy-button" style="padding: 8px 16px; font-size: 12px;">Modifier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

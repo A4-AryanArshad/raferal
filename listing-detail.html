@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Détails</h1>
+            <div class="header-icon">
+                <i class="fas fa-heart" style="cursor: pointer;"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Main Image -->
+            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" alt="Apartment" class="detail-image">
+
+            <!-- Title and Basic Info -->
+            <div class="detail-section">
+                <h2 style="font-size: 24px; margin-bottom: 10px;">Appartement moderne au centre-ville</h2>
+                <div style="color: #666; margin-bottom: 15px;">
+                    <div><i class="fas fa-map-marker-alt" style="color: #e31c23; margin-right: 5px;"></i>Paris, France</div>
+                    <div style="margin-top: 5px;"><i class="fas fa-star" style="color: #ffc107;"></i> 4.8 (124 avis)</div>
+                </div>
+                <div style="font-size: 28px; font-weight: 700; color: #2c2c2c; margin-bottom: 20px;">
+                    <i class="fas fa-euro-sign"></i> 85 / nuit
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="detail-section">
+                <h3>Description</h3>
+                <div class="detail-text">
+                    Magnifique appartement moderne situé en plein cœur de Paris. 
+                    Proche des transports en commun et des principales attractions. 
+                    Parfait pour un séjour confortable dans la capitale.
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="detail-section">
+                <h3>Équipements</h3>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                    <div style="padding: 10px; background: #f8f8f8; border-radius: 8px; display: flex; align-items: center;"><i class="fas fa-wifi" style="margin-right: 8px; color: #e31c23;"></i>Wi-Fi</div>
+                    <div style="padding: 10px; background: #f8f8f8; border-radius: 8px; display: flex; align-items: center;"><i class="fas fa-utensils" style="margin-right: 8px; color: #e31c23;"></i>Cuisine</div>
+                    <div style="padding: 10px; background: #f8f8f8; border-radius: 8px; display: flex; align-items: center;"><i class="fas fa-tshirt" style="margin-right: 8px; color: #e31c23;"></i>Lave-linge</div>
+                    <div style="padding: 10px; background: #f8f8f8; border-radius: 8px; display: flex; align-items: center;"><i class="fas fa-snowflake" style="margin-right: 8px; color: #e31c23;"></i>Climatisation</div>
+                </div>
+            </div>
+
+            <!-- Reviews -->
+            <div class="detail-section">
+                <h3>Avis (124)</h3>
+                <div style="background: #f8f8f8; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                    <div style="font-weight: 600; margin-bottom: 5px;">Marie L.</div>
+                    <div style="color: #666; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                    <div style="color: #666; margin-top: 5px;">Excellent séjour, appartement très propre et bien situé!</div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div style="margin-bottom: 30px; margin-top: 20px;">
+                <a href="referral-share.html" style="text-decoration: none;">
+                    <button class="cta-button">Générer un lien de recommandation</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

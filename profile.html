@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Profil</h1>
+            <div class="header-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar">JD</div>
+                <div class="profile-name">Jean Dupont</div>
+                <div class="profile-email">jean.dupont@email.com</div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid" style="margin-bottom: 30px;">
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Références</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30 €</div>
+                    <div class="stat-label">Gagné</div>
+                </div>
+            </div>
+
+            <!-- Menu Items -->
+            <div style="background: white; border-radius: 12px; overflow: hidden; margin-bottom: 20px;">
+                <div class="profile-menu-item">
+                    <div class="profile-menu-label"><i class="fas fa-share-alt" style="margin-right: 10px; color: #e31c23;"></i>Mes recommandations</div>
+                    <div class="profile-menu-icon"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="profile-menu-item">
+                    <div class="profile-menu-label"><i class="fas fa-history" style="margin-right: 10px; color: #e31c23;"></i>Historique des transactions</div>
+                    <div class="profile-menu-icon"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="profile-menu-item">
+                    <div class="profile-menu-label"><i class="fas fa-credit-card" style="margin-right: 10px; color: #e31c23;"></i>Méthodes de paiement</div>
+                    <div class="profile-menu-icon"><i class="fas fa-chevron-right"></i></div>
+                </div>
+                <div class="profile-menu-item">
+                    <div class="profile-menu-label"><i class="fas fa-cog" style="margin-right: 10px; color: #e31c23;"></i>Paramètres</div>
+                    <div class="profile-menu-icon"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Logout -->
+            <button class="cta-button secondary" style="margin-bottom: 20px;">Déconnexion</button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

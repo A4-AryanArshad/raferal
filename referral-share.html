@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Referral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Partager</h1>
+            <div class="header-icon">
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="listing-search.html" class="menu-item">
+                    <i class="fas fa-search"></i>
+                    <span class="menu-item-text">Parcourir les locations</span>
+                </a>
+                <a href="listing-detail.html" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-item-text">Détails de la location</span>
+                </a>
+                <a href="referral-share.html" class="menu-item">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="menu-item-text">Partager une recommandation</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Listing Preview -->
+            <div class="listing-card" style="margin-bottom: 30px;">
+                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=300&fit=crop" alt="Apartment" class="listing-image">
+                <div class="listing-content">
+                    <div class="listing-title">Appartement moderne au centre-ville</div>
+                    <div class="listing-location"><i class="fas fa-map-marker-alt" style="color: #e31c23; margin-right: 5px;"></i>Paris, France</div>
+                    <div class="listing-price">85 € / nuit</div>
+                </div>
+            </div>
+
+            <!-- Referral Link Box -->
+            <div class="referral-link-box">
+                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Votre lien de recommandation:</div>
+                <div class="referral-link">https://app.com/r/abc123xyz789</div>
+                <button class="copy-button">Copier le lien</button>
+            </div>
+
+            <!-- Share Options -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="font-size: 18px; margin-bottom: 15px;">Partager via:</h3>
+                <div class="share-options">
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fab fa-whatsapp" style="color: #25D366;"></i></div>
+                        <div class="share-label">WhatsApp</div>
+                    </div>
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fas fa-envelope" style="color: #e31c23;"></i></div>
+                        <div class="share-label">Email</div>
+                    </div>
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fas fa-sms" style="color: #e31c23;"></i></div>
+                        <div class="share-label">SMS</div>
+                    </div>
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fab fa-facebook" style="color: #1877F2;"></i></div>
+                        <div class="share-label">Facebook</div>
+                    </div>
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fab fa-twitter" style="color: #1DA1F2;"></i></div>
+                        <div class="share-label">Twitter</div>
+                    </div>
+                    <div class="share-option">
+                        <div class="share-icon"><i class="fas fa-copy" style="color: #e31c23;"></i></div>
+                        <div class="share-label">Copier</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div style="background: #f0f7ff; border: 1px solid #b3d9ff; border-radius: 12px; padding: 15px; margin-bottom: 20px;">
+                <div style="font-size: 14px; color: #2c2c2c;">
+                    <strong>💡 Astuce:</strong> Vous gagnerez une récompense lorsque votre ami complète sa réservation et son séjour.
+                </div>
+            </div>
+
+            <!-- Tracking Info -->
+            <div class="progress-box">
+                <div class="progress-item">
+                    <span class="progress-label">Clics sur le lien</span>
+                    <span class="progress-value">12</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-label">Statut</span>
+                    <span class="progress-value">Actif</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
