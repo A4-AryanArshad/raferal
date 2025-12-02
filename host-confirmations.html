@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de réservation (Hôte)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Détail réservation</h1>
+            <div class="header-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Portail Hôte</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="host-dashboard.html" class="menu-item">
+                    <i class="fas fa-list"></i>
+                    <span class="menu-item-text">Réservations en attente</span>
+                </a>
+                <a href="host-confirmations.html" class="menu-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="menu-item-text">Historique des confirmations</span>
+                </a>
+                <a href="host-login.html" class="menu-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="menu-item-text">Déconnexion</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="detail-section">
+                <h3>Informations de la réservation</h3>
+                <p class="detail-text" style="margin-top:10px;">
+                    <strong>Invité:</strong> Sarah Johnson<br>
+                    <strong>Email invité:</strong> sarah@email.com<br>
+                    <strong>Dates:</strong> 15 - 20 Mars 2024<br>
+                    <strong>Logement:</strong> Appartement moderne au centre-ville<br>
+                    <strong>Code recommandation:</strong> XYZ789<br>
+                    <strong>Confirmation Airbnb (si fourni):</strong> ABC123
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <h3>Étapes pour vérifier sur Airbnb</h3>
+                <ol style="padding-left: 20px; color:#666; font-size:14px; line-height:1.7;">
+                    <li>Ouvrez l'application ou le site <strong>Airbnb Hôte</strong>.</li>
+                    <li>Allez dans <strong>Réservations</strong> ou votre <strong>Calendrier</strong>.</li>
+                    <li>Recherchez une réservation au nom de <strong>Sarah Johnson</strong> aux dates indiquées.</li>
+                    <li>Vérifiez que les dates, le logement et le montant correspondent.</li>
+                    <li>Si le numéro de confirmation ABC123 est disponible, comparez-le.</li>
+                </ol>
+            </div>
+
+            <div class="detail-section">
+                <h3>Confirmer ou rejeter</h3>
+                <p class="detail-text" style="margin-top:10px;">
+                    Une fois que vous avez vérifié les informations dans Airbnb, indiquez ci-dessous si cette réservation
+                    correspond bien à la recommandation reçue.
+                </p>
+
+                <div style="display:flex; gap:10px; margin-top:15px;">
+                    <button class="cta-button" style="flex:1; background:#4caf50;">
+                        <i class="fas fa-check" style="margin-right:6px;"></i>Confirmer la réservation
+                    </button>
+                    <button class="cta-button secondary" style="flex:1; background:#f5f5f5; color:#2c2c2c; border:1px solid #e0e0e0;">
+                        <i class="fas fa-times" style="margin-right:6px;"></i>Rejeter
+                    </button>
+                </div>
+
+                <textarea placeholder="Optionnel: ajoutez un commentaire pour le parrain (ex: nom différent sur Airbnb)."
+                          style="margin-top:15px; width:100%; padding:12px; border:1px solid #e0e0e0; border-radius:12px; font-size:14px; min-height:80px;"></textarea>
+
+                <p class="helper-text" style="margin-top:10px;">
+                    Après confirmation, la récompense du parrain passera au statut <strong>\"en attente de validation\"</strong>
+                    jusqu'à la fin du séjour.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('sidebarMenu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger-icon');
+                
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </div>
+</body>
+</html>

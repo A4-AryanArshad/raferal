@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J'ai réservé</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>J'ai réservé</h1>
+            <div class="header-icon"></div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Navigation</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="dashboard.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Tableau de bord (Accueil)</span>
+                </a>
+                <a href="my-referrals.html" class="menu-item">
+                    <i class="fas fa-list"></i>
+                    <span class="menu-item-text">Mes recommandations</span>
+                </a>
+                <a href="rewards.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span class="menu-item-text">Récompenses et progression</span>
+                </a>
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span class="menu-item-text">Profil et paramètres</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="detail-section">
+                <h3>Confirmez votre réservation Airbnb</h3>
+                <p class="detail-text" style="margin-top: 10px;">
+                    Merci d'avoir utilisé un lien de recommandation. Donnez-nous quelques détails pour que nous puissions
+                    informer l'hôte et valider la récompense de votre ami.
+                </p>
+            </div>
+
+            <div class="detail-section">
+                <label style="display:block; font-size:14px; font-weight:600; color:#2c2c2c; margin-bottom:8px;">
+                    Email utilisé sur Airbnb
+                </label>
+                <input type="email" placeholder="email utilisé pour la réservation"
+                       style="width:100%; padding:14px 16px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:15px;">
+
+                <label style="display:block; font-size:14px; font-weight:600; color:#2c2c2c; margin-bottom:8px;">
+                    Numéro de confirmation (optionnel)
+                </label>
+                <input type="text" placeholder="ABC123"
+                       style="width:100%; padding:14px 16px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:15px;">
+
+                <label style="display:block; font-size:14px; font-weight:600; color:#2c2c2c; margin-bottom:8px;">
+                    Dates du séjour
+                </label>
+                <div style="display:flex; gap:10px; margin-bottom:15px;">
+                    <input type="date" style="flex:1; padding:12px; border:2px solid #e0e0e0; border-radius:12px;">
+                    <input type="date" style="flex:1; padding:12px; border:2px solid #e0e0e0; border-radius:12px;">
+                </div>
+
+                <label style="display:block; font-size:14px; font-weight:600; color:#2c2c2c; margin-bottom:8px;">
+                    Votre prénom (pour l'hôte)
+                </label>
+                <input type="text" placeholder="Sarah"
+                       style="width:100%; padding:14px 16px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:15px;">
+
+                <p style="font-size:12px; color:#999;">
+                    Ces informations seront partagées avec l'hôte uniquement pour confirmer la réservation.
+                </p>
+            </div>
+
+            <button class="cta-button" style="margin-top: 10px;">
+                Envoyer à l'hôte pour confirmation
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="tab-nav">
+            <a href="dashboard.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                Accueil
+            </a>
+            <a href="listing-search.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-search"></i></div>
+                Rechercher
+            </a>
+            <a href="rewards.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-gift"></i></div>
+                Récompenses
+            </a>
+            <a href="profile.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                Profil
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sidebarMenu');
+            const overlay = document.querySelector('.menu-overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Hôte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div style="width:24px;"></div>
+            <h1>Portail Hôte</h1>
+            <div class="header-icon"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content" style="padding: 40px 20px; display:flex; flex-direction:column; justify-content:center; min-height:100vh;">
+            <div style="text-align:center; margin-bottom:30px;">
+                <div style="width:80px; height:80px; border-radius:20px; background:linear-gradient(135deg,#2c2c2c,#555); margin:0 auto 20px; display:flex; align-items:center; justify-content:center; color:white;">
+                    <i class="fas fa-hotel" style="font-size:34px;"></i>
+                </div>
+                <h2 style="font-size:24px; font-weight:700; margin-bottom:8px;">Connexion Hôte</h2>
+                <p style="color:#666; font-size:14px;">Confirmez les réservations provenant de liens de recommandation.</p>
+            </div>
+
+            <div class="detail-section">
+                <label style="display:block; font-size:14px; font-weight:600; margin-bottom:8px;">Email professionnel</label>
+                <input type="email" placeholder="hotel@example.com"
+                       style="width:100%; padding:14px 16px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:15px;">
+
+                <label style="display:block; font-size:14px; font-weight:600; margin-bottom:8px;">Mot de passe</label>
+                <input type="password" placeholder="••••••••"
+                       style="width:100%; padding:14px 16px; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; margin-bottom:10px;">
+
+                <a href="#" style="font-size:12px; color:#e31c23; text-decoration:none; float:right; margin-bottom:20px;">Mot de passe oublié ?</a>
+                <div style="clear:both;"></div>
+
+                <a href="host-dashboard.html" style="text-decoration:none; display:block;">
+                    <button class="cta-button">
+                        <i class="fas fa-sign-in-alt" style="margin-right:8px;"></i>Se connecter en tant qu'hôte
+                    </button>
+                </a>
+
+                <p style="font-size:12px; color:#999; margin-top:15px; text-align:center;">
+                    Vous êtes voyageur ? Utilisez plutôt l'application principale.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

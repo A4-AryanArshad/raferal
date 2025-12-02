@@ -463,10 +463,12 @@ body {
 }
 
 .stat-card {
-    background: #f8f8f8;
-    border-radius: 12px;
-    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px 18px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e8e8e8;
 }
 
 .stat-value {
@@ -535,6 +537,73 @@ body {
 .empty-text {
     font-size: 16px;
     margin-bottom: 20px;
+}
+
+/* Generic list rows (used in multiple screens) */
+.list-item {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+/* Host booking list */
+.host-booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.host-booking-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e4e4e4;
+    padding: 14px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.host-booking-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.host-booking-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c2c2c;
+    margin-bottom: 4px;
+}
+
+.host-booking-sub {
+    font-size: 13px;
+    color: #666666;
+}
+
+.host-booking-status {
+    text-align: right;
+    font-size: 13px;
+}
+
+.host-booking-status-label {
+    display: inline-block;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #b36b00;
+    font-weight: 600;
+    margin-bottom: 2px;
+    white-space: nowrap;
+}
+
+.host-booking-status-time {
+    color: #999999;
 }
 
 /* Hamburger Menu */
@@ -794,4 +863,5 @@ body {
     border: 2px solid #2196F3 !important;
     background: #2c2c2c !important;
 }
+
 

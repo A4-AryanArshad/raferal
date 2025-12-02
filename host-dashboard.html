@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Hôte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <h1>Hôte - Réservations</h1>
+            <div class="header-icon">
+                <i class="fas fa-bell"></i>
+            </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Portail Hôte</h2>
+                <div class="menu-close" onclick="toggleMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="menu-items">
+                <a href="host-dashboard.html" class="menu-item">
+                    <i class="fas fa-list"></i>
+                    <span class="menu-item-text">Réservations en attente</span>
+                </a>
+                <a href="host-listing-form.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span class="menu-item-text">Créer une annonce</span>
+                </a>
+                <a href="host-confirmations.html" class="menu-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="menu-item-text">Historique des confirmations</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span class="menu-item-text">Paramètres hôte</span>
+                </a>
+                <a href="host-login.html" class="menu-item">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="menu-item-text">Déconnexion</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Summary -->
+            <div class="stats-grid" style="margin-bottom: 25px;">
+                <div class="stat-card">
+                    <div class="stat-value">2</div>
+                    <div class="stat-label">En attente</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Confirmées</div>
+                </div>
+            </div>
+
+            <!-- Pending Confirmations List -->
+            <div class="detail-section">
+                <h3>Réservations à confirmer</h3>
+
+                <div class="host-booking-list">
+                    <!-- Item 1 -->
+                    <a href="host-confirmations.html" style="text-decoration:none; color:inherit;">
+                        <div class="host-booking-card">
+                            <div class="host-booking-main">
+                                <div>
+                                    <div class="host-booking-title">Sarah Johnson • Appartement centre-ville</div>
+                                    <div class="host-booking-sub">Code recommandation: XYZ789</div>
+                                    <div class="host-booking-sub">Séjour: 15 - 20 Mars 2024</div>
+                                </div>
+                                <div class="host-booking-status">
+                                    <div class="host-booking-status-label">À vérifier</div>
+                                    <div class="host-booking-status-time">Reçu il y a 2h</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a href="host-confirmations.html" style="text-decoration:none; color:inherit;">
+                        <div class="host-booking-card">
+                            <div class="host-booking-main">
+                                <div>
+                                    <div class="host-booking-title">Marc Dubois • Villa plage</div>
+                                    <div class="host-booking-sub">Code recommandation: ABC123</div>
+                                    <div class="host-booking-sub">Séjour: 2 - 5 Avril 2024</div>
+                                </div>
+                                <div class="host-booking-status">
+                                    <div class="host-booking-status-label">À vérifier</div>
+                                    <div class="host-booking-status-time">Reçu hier</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <p class="helper-text" style="margin-top:15px;">
+                    Connectez-vous à votre compte Airbnb, vérifiez les réservations correspondantes, puis
+                    ouvrez une fiche pour confirmer ou rejeter la réservation.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('sidebarMenu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger-icon');
+                
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </div>
+</body>
+</html>
