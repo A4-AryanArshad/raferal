@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Réservations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <h1>Réservations</h1>
+            <div class="header-icon"><i class="fas fa-book"></i></div>
+        </div>
+
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Admin Panel</h2>
+                <div class="menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="menu-items">
+                <a href="admin-dashboard.html" class="menu-item"><i class="fas fa-chart-line"></i><span class="menu-item-text">Vue d'ensemble</span></a>
+                <a href="admin-users.html" class="menu-item"><i class="fas fa-users"></i><span class="menu-item-text">Utilisateurs</span></a>
+                <a href="admin-referrals.html" class="menu-item"><i class="fas fa-link"></i><span class="menu-item-text">Références</span></a>
+                <a href="admin-reservations.html" class="menu-item"><i class="fas fa-book"></i><span class="menu-item-text">Réservations</span></a>
+                <a href="admin-rewards.html" class="menu-item"><i class="fas fa-gift"></i><span class="menu-item-text">Récompenses</span></a>
+                <a href="admin-payouts.html" class="menu-item"><i class="fas fa-wallet"></i><span class="menu-item-text">Payouts</span></a>
+                <a href="admin-announcements.html" class="menu-item"><i class="fas fa-home"></i><span class="menu-item-text">Annonces</span></a>
+                <a href="admin-analytics.html" class="menu-item"><i class="fas fa-chart-pie"></i><span class="menu-item-text">Analytics</span></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="detail-section">
+                <h3>Réservations complétées</h3>
+                <p class="detail-text" style="margin-top:8px; font-size:14px;">
+                    Vue de toutes les réservations confirmées par les hôtes via le portail Hôte.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Réservations</div>
+                <div class="list-item">
+                    <div>
+                        <strong>Appartement centre-ville</strong><br>
+                        <span style="font-size:13px; color:#666;">Invité: Sarah Johnson • Parrain: Jean Dupont</span><br>
+                        <span style="font-size:13px; color:#666;">Dates: 15 - 20 Mars 2024</span>
+                    </div>
+                    <div style="text-align:right; font-size:12px; color:#999;">
+                        Statut: <span class="badge badge-success">Confirmée</span><br>
+                        Valeur: 450 €
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <strong>Villa plage</strong><br>
+                        <span style="font-size:13px; color:#666;">Invité: Marc Dubois • Parrain: Sarah Johnson</span><br>
+                        <span style="font-size:13px; color:#666;">Dates: 2 - 5 Avril 2024</span>
+                    </div>
+                    <div style="text-align:right; font-size:12px; color:#999;">
+                        Statut: <span class="badge badge-pending">En attente paiement</span><br>
+                        Valeur: 600 €
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('sidebarMenu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger-icon');
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </div>
+</body>
+</html>
+
+

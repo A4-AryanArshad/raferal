@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <h1>Analytics</h1>
+            <div class="header-icon"><i class="fas fa-chart-pie"></i></div>
+        </div>
+
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Admin Panel</h2>
+                <div class="menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="menu-items">
+                <a href="admin-dashboard.html" class="menu-item"><i class="fas fa-chart-line"></i><span class="menu-item-text">Vue d'ensemble</span></a>
+                <a href="admin-users.html" class="menu-item"><i class="fas fa-users"></i><span class="menu-item-text">Utilisateurs</span></a>
+                <a href="admin-referrals.html" class="menu-item"><i class="fas fa-link"></i><span class="menu-item-text">Références</span></a>
+                <a href="admin-reservations.html" class="menu-item"><i class="fas fa-book"></i><span class="menu-item-text">Réservations</span></a>
+                <a href="admin-rewards.html" class="menu-item"><i class="fas fa-gift"></i><span class="menu-item-text">Récompenses</span></a>
+                <a href="admin-payouts.html" class="menu-item"><i class="fas fa-wallet"></i><span class="menu-item-text">Payouts</span></a>
+                <a href="admin-announcements.html" class="menu-item"><i class="fas fa-home"></i><span class="menu-item-text">Annonces</span></a>
+                <a href="admin-analytics.html" class="menu-item"><i class="fas fa-chart-pie"></i><span class="menu-item-text">Analytics</span></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="detail-section">
+                <h3>Vue globale des performances</h3>
+                <p class="detail-text" style="margin-top:8px; font-size:14px;">
+                    Page dédiée aux graphiques détaillés: entonnoir de conversion, performances par hôte, par annonce, par canal.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">KPI principaux</div>
+                <div class="stats-grid" style="margin-top:10px;">
+                    <div class="stat-card">
+                        <div class="stat-value">12%</div>
+                        <div class="stat-label">Taux de conversion global</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">38</div>
+                        <div class="stat-label">Réservations ce mois‑ci</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3,4k €</div>
+                        <div class="stat-label">Récompenses ce mois‑ci</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">189</div>
+                        <div class="stat-label">Réservations totales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <div class="card-title">Réservations par mois</div>
+                <p class="detail-text" style="margin-top:8px; font-size:14px;">
+                    Graphique montrant combien de réservations ont été confirmées chaque mois.
+                    Les barres représentent le volume relatif de réservations pour les 4 derniers mois.
+                </p>
+                <div class="chart-container">
+                    <div class="chart-row">
+                        <div class="chart-label">Janv.</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 35%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">Févr.</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">Mars</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">Avril</div>
+                        <div class="chart-bar-track">
+                            <div class="chart-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('sidebarMenu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger-icon');
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </div>
+</body>
+</html>
+
+

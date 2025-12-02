@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Références</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="wireframe-container">
+        <div class="header">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <h1>Références</h1>
+            <div class="header-icon"><i class="fas fa-link"></i></div>
+        </div>
+
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+        <div class="sidebar-menu" id="sidebarMenu">
+            <div class="menu-header">
+                <h2>Admin Panel</h2>
+                <div class="menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="menu-items">
+                <a href="admin-dashboard.html" class="menu-item"><i class="fas fa-chart-line"></i><span class="menu-item-text">Vue d'ensemble</span></a>
+                <a href="admin-users.html" class="menu-item"><i class="fas fa-users"></i><span class="menu-item-text">Utilisateurs</span></a>
+                <a href="admin-referrals.html" class="menu-item"><i class="fas fa-link"></i><span class="menu-item-text">Références</span></a>
+                <a href="admin-reservations.html" class="menu-item"><i class="fas fa-book"></i><span class="menu-item-text">Réservations</span></a>
+                <a href="admin-rewards.html" class="menu-item"><i class="fas fa-gift"></i><span class="menu-item-text">Récompenses</span></a>
+                <a href="admin-payouts.html" class="menu-item"><i class="fas fa-wallet"></i><span class="menu-item-text">Payouts</span></a>
+                <a href="admin-announcements.html" class="menu-item"><i class="fas fa-home"></i><span class="menu-item-text">Annonces</span></a>
+                <a href="admin-analytics.html" class="menu-item"><i class="fas fa-chart-pie"></i><span class="menu-item-text">Analytics</span></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="detail-section">
+                <h3>Suivi des liens de recommandation</h3>
+                <p class="detail-text" style="margin-top:8px; font-size:14px;">
+                    Vue globale de toutes les références avec leurs performances (clics, réservations, statut).
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Filtres</div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+                    <button class="cta-button secondary" style="flex:1; font-size:14px;">Tous</button>
+                    <button class="cta-button secondary" style="flex:1; font-size:14px;">Actifs</button>
+                    <button class="cta-button secondary" style="flex:1; font-size:14px;">Réservations complétées</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Références</div>
+                <div class="list-item">
+                    <div>
+                        <strong>XYZ789</strong> • Appartement centre-ville<br>
+                        <span style="font-size:13px; color:#666;">Parrain: Jean Dupont</span>
+                    </div>
+                    <div style="text-align:right; font-size:12px; color:#999;">
+                        Clics: 24<br>
+                        Réservations: 3<br>
+                        Statut: <span class="badge badge-success">Actif</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div>
+                        <strong>ABC123</strong> • Villa plage<br>
+                        <span style="font-size:13px; color:#666;">Parrain: Sarah Johnson</span>
+                    </div>
+                    <div style="text-align:right; font-size:12px; color:#999;">
+                        Clics: 10<br>
+                        Réservations: 1<br>
+                        Statut: <span class="badge badge-pending">En attente hôte</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('sidebarMenu');
+                const overlay = document.querySelector('.menu-overlay');
+                const hamburger = document.querySelector('.hamburger-icon');
+                menu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        </script>
+    </div>
+</body>
+</html>
+
+
